@@ -7,10 +7,10 @@ class IMove(ABC):
 class IPlayer(ABC):
 	pass
 
-class IGame(game.IGame):
+class IGame(game.IGame[IMove]):
 	pass
 
-class IGameFactory(game.IGameFactory):
+class IGameFactory(game.IGameFactory[IMove]):
 
 	@abstractmethod
 	def createGame(self) -> IGame:
